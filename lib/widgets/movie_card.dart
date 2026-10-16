@@ -65,7 +65,7 @@ class MovieCard extends StatelessWidget {
                   const SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () {
-                      print('Booking ${movie.title}');
+                      debugPrint('Booking ${movie.title}');
                       onBookPressed();
                     },
                     style: ElevatedButton.styleFrom(

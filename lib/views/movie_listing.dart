@@ -70,7 +70,7 @@ class _MovieListingState extends State<MovieListing> {
                   setState(() {
                     _ticketQuantity = value;
                   });
-                  print('Tickets selected: $_ticketQuantity');
+                  debugPrint('Tickets selected: $_ticketQuantity');
                 }
               },
               dropdownMenuEntries: const [
@@ -89,7 +89,7 @@ class _MovieListingState extends State<MovieListing> {
                       'Added $_ticketQuantity tickets to the order';
                 });
 
-                print(_bookingMessage);
+                debugPrint(_bookingMessage);
               },
               child: const Text('Add to order'),
             ),

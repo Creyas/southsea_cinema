@@ -16,7 +16,7 @@ When the Joker wreaks havoc on Gotham, Batman, James Gordon and Harvey Dent work
         posterImagePath: 'assets/images/the_dark_knight.jpg',
       ),
       Movie(
-        id: 'Chainsaw Man - The Movie: Reze Arc',
+        id: 'chainsaw-man-reze-arc',
         title: 'Chainsaw Man - The Movie: Reze Arc',
         synopsis:
             'For the first time, Chainsaw Man slashes his way onto the big screen in an epic, action-fueled adventure that continues the hugely popular anime series. Denji worked as a Devil Hunter for the yakuza, trying to pay off the debt he inherited from his parents, until the yakuza betrayed him and had him killed. As he was losing consciousness, Denji’s beloved chainsaw-powered devil-dog, Pochita, made a deal with Denji and saved his life. This fused the two together, creating the unstoppable Chainsaw Man. Now, in a brutal war between devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into his world, and Denji faces his deadliest battle yet, fueled by love in a world where survival knows no rules.',

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  const MovieListing({
+    super.key,
+    required this.movie,
+  });
+
+  final Movie movie;
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -28,19 +34,26 @@ class _MovieListingState extends State<MovieListing> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'The Dark Knight',
-              style: TextStyle(fontSize: 40),
+            Text(
+              widget.movie.title,
+              style: const TextStyle(fontSize: 40),
             ),
-            const Text(
-              '2008 | PG-13 | 2h 32m',
-              style: TextStyle(fontSize: 16),
+            Text(
+              '${widget.movie.ageRating} | ${widget.movie.runtime}',
+              style: const TextStyle(fontSize: 16),
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.',
+                widget.movie.description,
                 style: TextStyle(fontSize: 12),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                widget.movie.synopsis,
+                style: const TextStyle(fontSize: 12),
               ),
             ),
             const SizedBox(height: 24),

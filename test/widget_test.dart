@@ -49,24 +49,45 @@ void main() {
     (WidgetTester tester) async {
       await tester.pumpWidget(const SouthseaCinemaApp());
 
-      final firstBookButton = find
-          .widgetWithText(
-            ElevatedButton,
-            'Book',
-          )
-          .first;
-
-      await tester.tap(firstBookButton);
+      await tester.tap(
+        find.widgetWithText(ElevatedButton, 'Book').first,
+      );
       await tester.pumpAndSettle();
 
       final ticketDropdown = find.byType(DropdownMenu<int>);
+
+      await tester.scrollUntilVisible(
+        ticketDropdown,
+        300,
+        scrollable: find.byType(Scrollable).last,
+      );
+
       await tester.tap(ticketDropdown);
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('3').last);
+      final quantityThree = find.text('3').last;
+
+      await tester.scrollUntilVisible(
+        quantityThree,
+        200,
+        scrollable: find.byType(Scrollable).last,
+      );
+
+      await tester.tap(quantityThree);
       await tester.pumpAndSettle();
 
-      await tester.tap(find.widgetWithText(ElevatedButton, 'Add to order'));
+      final addToOrderButton = find.widgetWithText(
+        ElevatedButton,
+        'Add to order',
+      );
+
+      await tester.scrollUntilVisible(
+        addToOrderButton,
+        300,
+        scrollable: find.byType(Scrollable).last,
+      );
+
+      await tester.tap(addToOrderButton);
       await tester.pump();
 
       expect(

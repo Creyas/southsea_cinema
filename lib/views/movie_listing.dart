@@ -65,7 +65,11 @@ class _MovieListingState extends State<MovieListing> {
             const SizedBox(height: 12),
             ElevatedButton(
               onPressed: () {
-                print('Add to order button pressed');
+                setState(() {
+                  _bookingMessage = 'Added $_ticketQuantity tickets to the order';
+                });
+
+                print(_bookingMessage);
               },
               child: const Text('Add to order'),
             ),

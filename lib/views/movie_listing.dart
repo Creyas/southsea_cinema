@@ -42,15 +42,15 @@ class _MovieListingState extends State<MovieListing> {
               '${widget.movie.ageRating} | ${widget.movie.runtime}',
               style: const TextStyle(fontSize: 16),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
-                widget.movie.description,
-                style: TextStyle(fontSize: 12),
+                widget.movie.synopsis,
+                style: const TextStyle(fontSize: 12),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.movie.synopsis,
                 style: const TextStyle(fontSize: 12),
@@ -79,7 +79,8 @@ class _MovieListingState extends State<MovieListing> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  _bookingMessage = 'Added $_ticketQuantity tickets to the order';
+                  _bookingMessage =
+                      'Added $_ticketQuantity tickets to the order';
                 });
 
                 print(_bookingMessage);

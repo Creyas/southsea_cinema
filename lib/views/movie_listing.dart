@@ -25,6 +25,7 @@ class _MovieListingState extends State<MovieListing> {
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'The Dark Knight',
@@ -41,6 +42,7 @@ class _MovieListingState extends State<MovieListing> {
                 style: TextStyle(fontSize: 12),
               ),
             ),
+            const SizedBox(height: 24),
             DropdownMenu<int>(
               initialSelection: _ticketQuantity,
               onSelected: (int? value) {
@@ -59,6 +61,7 @@ class _MovieListingState extends State<MovieListing> {
                 DropdownMenuEntry(value: 5, label: '5'),
               ],
             ),
+            const SizedBox(height: 12),
             ElevatedButton(
               onPressed: () {
                 print('Add to order button pressed');

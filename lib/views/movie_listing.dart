@@ -73,6 +73,7 @@ class _MovieListingState extends State<MovieListing> {
               },
               child: const Text('Add to order'),
             ),
+            Text(_bookingMessage),
           ],
         ),
       ),

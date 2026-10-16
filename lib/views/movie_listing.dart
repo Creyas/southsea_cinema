@@ -29,7 +29,7 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Container(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,9 +51,11 @@ class _MovieListingState extends State<MovieListing> {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                widget.movie.synopsis,
-                style: const TextStyle(fontSize: 12),
+              child: Image.asset(
+                widget.movie.posterImagePath,
+                width: 220,
+                height: 320,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 24),

@@ -42,6 +42,10 @@ class _MovieListingState extends State<MovieListing> {
               '${widget.movie.ageRating} | ${widget.movie.runtime}',
               style: const TextStyle(fontSize: 16),
             ),
+            Text(
+              widget.movie.formattedPrice,
+              style: const TextStyle(fontSize: 16),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(

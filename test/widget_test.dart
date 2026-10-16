@@ -43,4 +43,36 @@ void main() {
       expect(find.text('Add to order'), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'add to order button displays booking feedback',
+    (WidgetTester tester) async {
+      await tester.pumpWidget(const SouthseaCinemaApp());
+
+      final firstBookButton = find
+          .widgetWithText(
+            ElevatedButton,
+            'Book',
+          )
+          .first;
+
+      await tester.tap(firstBookButton);
+      await tester.pumpAndSettle();
+
+      final ticketDropdown = find.byType(DropdownMenu<int>);
+      await tester.tap(ticketDropdown);
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('3').last);
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.widgetWithText(ElevatedButton, 'Add to order'));
+      await tester.pump();
+
+      expect(
+        find.text('Added 3 tickets to the order'),
+        findsOneWidget,
+      );
+    },
+  );
 }

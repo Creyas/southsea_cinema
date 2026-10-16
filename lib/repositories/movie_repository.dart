@@ -28,4 +28,14 @@ When the Joker wreaks havoc on Gotham, Batman, James Gordon and Harvey Dent work
       ),
     ];
   }
+
+  Movie? getMovieById(String id) {
+    for (final movie in getMovies()) {
+      if (movie.id == id) {
+        return movie;
+      }
+    }
+
+    return null;
+  }
 }

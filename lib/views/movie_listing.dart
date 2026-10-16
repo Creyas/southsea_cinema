@@ -59,6 +59,12 @@ class _MovieListingState extends State<MovieListing> {
                 DropdownMenuEntry(value: 5, label: '5'),
               ],
             ),
+            ElevatedButton(
+              onPressed: () {
+                print('Add to order button pressed');
+              },
+              child: const Text('Add to order'),
+            ),
           ],
         ),
       ),

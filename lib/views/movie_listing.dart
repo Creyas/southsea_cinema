@@ -4,7 +4,6 @@ import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
-
   @override
   State<MovieListing> createState() => _MovieListingState();
 }
@@ -24,59 +23,52 @@ class _MovieListingState extends State<MovieListing> {
       ),
       drawer: const NavDrawer(),
       body: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+      color: cinemaBackground,
+      child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'The Dark Knight',
-              style: TextStyle(fontSize: 40),
-            ),
-            const Text(
-              '2008 | PG-13 | 2h 32m',
-              style: TextStyle(fontSize: 16),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.',
-                style: TextStyle(fontSize: 12),
+            Text(
+              "Dracula",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 252, 250, 250),
+                  fontSize: 100
+                ),
+                textAlign: TextAlign.left,
               ),
-            ),
-            const SizedBox(height: 24),
-            DropdownMenu<int>(
-              initialSelection: _ticketQuantity,
-              onSelected: (int? value) {
-                if (value != null) {
-                  setState(() {
-                    _ticketQuantity = value;
-                  });
-                  print('Tickets selected: $_ticketQuantity');
-                }
-              },
-              dropdownMenuEntries: const [
-                DropdownMenuEntry(value: 1, label: '1'),
-                DropdownMenuEntry(value: 2, label: '2'),
-                DropdownMenuEntry(value: 3, label: '3'),
-                DropdownMenuEntry(value: 4, label: '4'),
-                DropdownMenuEntry(value: 5, label: '5'),
-              ],
-            ),
-            const SizedBox(height: 12),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _bookingMessage = 'Added $_ticketQuantity tickets to the order';
-                });
-
-                print(_bookingMessage);
-              },
-              child: const Text('Add to order'),
-            ),
-            Text(_bookingMessage),
-          ],
-        ),
-      ),
+              Text(
+                "A decription of the film",
+                style: TextStyle(color: Color.fromARGB(255, 252, 250, 250)),
+              ),
+              DropdownMenu<int>(
+                initialSelection: _ticketQuantity,
+                onSelected: (int? value) {
+                  if (value != null) {
+                    setState(() {
+                      _ticketQuantity = value;
+                    });
+                    Text('Tickets selected: $_ticketQuantity');
+                  }
+                },
+                dropdownMenuEntries: [
+                  DropdownMenuEntry(value: 1, label: '1'),
+                  DropdownMenuEntry(value: 2, label: '2'),
+                  DropdownMenuEntry(value: 3, label: '3'),
+                  DropdownMenuEntry(value: 4, label: '4'),
+                  DropdownMenuEntry(value: 5, label: '5'),
+                ],
+              ),
+              Text('Tickets selected: $_ticketQuantity'),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _bookingMessage =
+                          'Added $_ticketQuantity tickets to order';
+                    });
+                  },
+                  child: const Text('Add to order')),
+              Text(_bookingMessage)
+            ],
+          )),
     );
   }
 }
